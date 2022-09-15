@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.idea/
+
+# Nuxt
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+
+# Environment
+.env
+dist
+
+# Yarn
+yarn.lock

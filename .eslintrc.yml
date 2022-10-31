@@ -17,7 +17,7 @@ plugins:
 rules:
   indent:
     - error
-    - tab
+    - space
   linebreak-style:
     - error
     - windows

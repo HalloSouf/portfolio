@@ -1,5 +1,7 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <h1 class="text-3xl font-bold">
+      Portfolio
+    </h1>
   </div>
 </template>

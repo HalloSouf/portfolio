@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.nuxt/
+
+# Production
+.env
+.env.*
+!.env.example
+
+# Package manager
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Misc
+.DS_Store

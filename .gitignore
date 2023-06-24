@@ -1,18 +1,23 @@
-# Dependencies
-node_modules/
-.idea/
-
-# Nuxt
-*.log*
+# Nuxt dev/build outputs
+.output
 .nuxt
 .nitro
 .cache
-.output
+dist
 
-# Environment
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
 .env
-dist/
-
-# Package Manager
-yarn-error.log
-yarn.lock
+.env.*
+!.env.example

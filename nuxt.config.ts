@@ -10,5 +10,12 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  css: ['@/assets/sass/app.sass']
+  css: ['@/assets/sass/app.sass', '@fortawesome/fontawesome-svg-core/styles.css'],
+  runtimeConfig: {
+    public: {
+      userLinkedinUrl: process.env.USER_LINKEDIN_URL || '',
+      userGithubUrl: process.env.USER_GITHUB_URL || ''
+    }
+  },
+  modules: ['@hypernym/nuxt-gsap']
 });

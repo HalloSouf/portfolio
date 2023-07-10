@@ -9,7 +9,14 @@ module.exports = {
     './app.vue'
   ],
   theme: {
-    extend: {}
+    extend: {
+      transitionDuration: {
+        750: '750ms'
+      },
+      transitionProperty: {
+        spacing: 'margin, padding'
+      }
+    }
   },
   plugins: []
 };

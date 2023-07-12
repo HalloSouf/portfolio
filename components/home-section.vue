@@ -1,30 +1,17 @@
 <script setup lang="ts">
-import { TransitionChild, TransitionRoot } from '@headlessui/vue';
+import { TransitionRoot, TransitionChild } from '@headlessui/vue';
 
 const runtimeConfig = useRuntimeConfig();
-const showHeading = ref(false);
+const showHeading = ref<boolean>(false);
 
 onMounted((): void => {
-  requestAnimationFrame((): void => {
-    showHeading.value = true;
-  });
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 176 && showHeading.value) {
-      showHeading.value = false;
-    } else if (window.scrollY < 350 && !showHeading.value) {
-      showHeading.value = true;
-    }
-  });
+  requestAnimationFrame((): boolean => (showHeading.value = true));
 });
 </script>
 
 <template>
-  <div
-    id="home-section"
-    class="h-screen w-full flex items-center justify-center max-w-7xl mx-auto px-4 lg:px-8"
-  >
-    <div class="w-full md:w-1/2 h-full flex items-center md:justify-start justify-center">
+  <div class="h-screen w-full flex items-center justify-center px-12 max-w-7xl mx-auto">
+    <div class="w-full h-full flex items-center justify-center md:justify-start">
       <TransitionRoot :show="showHeading">
         <TransitionChild
           as="template"
@@ -35,7 +22,7 @@ onMounted((): void => {
           leave-from="opacity-100 translate-x-0"
           leave-to="opacity-0 -translate-x-20"
         >
-          <span class="text-sm sm:text-base">Zeg hallo tegen</span>
+          <span class="text-base md:text-lg text-gray-600 font-semibold">Zeg hallo tegen</span>
         </TransitionChild>
 
         <TransitionChild
@@ -47,8 +34,8 @@ onMounted((): void => {
           leave-from="opacity-100 translate-y-0"
           leave-to="opacity-0 translate-y-full"
         >
-          <h1 class="text-4xl sm:text-6xl font-bold text-sky-600 tracking-widest">Souf IT</h1>
-          <p class="text-base sm:text-xl mt-3">Verwelkom je nieuwe website met open armen.</p>
+          <h1 class="text-5xl md:text-6xl font-bold text-sky-600 tracking-wide">Souf IT.</h1>
+          <p class="text-base md:text-lg mt-3">Verwelkom je nieuwe website met open armen.</p>
         </TransitionChild>
 
         <div class="flex items-center gap-x-6 mt-10">
@@ -100,7 +87,5 @@ onMounted((): void => {
         </div>
       </TransitionRoot>
     </div>
-
-    <div class="w-1/2 md:block hidden" />
   </div>
 </template>

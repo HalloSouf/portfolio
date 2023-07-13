@@ -3,7 +3,7 @@
     <Navbar />
 
     <div>
-      <HomeSection />
+      <LandingSection />
 
       <AboutMeSection />
     </div>

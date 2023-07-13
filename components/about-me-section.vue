@@ -7,7 +7,7 @@ const showContent = ref<boolean>(false);
  * Checks if the content of the about me section should be displayed based on the user's scroll position.
  * @returns {void}
  */
-const checkContentDisplay = (): void => {
+const viewInContentDisplay = (): void => {
   const element = document.getElementById('about-me-section');
   if (!element) {
     return;
@@ -27,8 +27,8 @@ const checkContentDisplay = (): void => {
 };
 
 onMounted((): void => {
-  checkContentDisplay();
-  document.addEventListener('scroll', (): void => checkContentDisplay());
+  viewInContentDisplay();
+  document.addEventListener('scroll', (): void => viewInContentDisplay());
 });
 </script>
 

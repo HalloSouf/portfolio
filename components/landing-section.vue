@@ -2,17 +2,38 @@
 import { TransitionRoot, TransitionChild } from '@headlessui/vue';
 
 const runtimeConfig = useRuntimeConfig();
-const showHeading = ref<boolean>(false);
+const showContent = ref<boolean>(false);
+
+const viewInContentDisplay = (): void => {
+  const element = document.getElementById('landing-section');
+  if (!element) {
+    return;
+  }
+
+  if (
+    window.scrollY >= element.clientHeight - window.innerHeight / 2 &&
+    showContent.value === true
+  ) {
+    showContent.value = false;
+  } else if (
+    window.scrollY < element.clientHeight - window.innerHeight / 20 &&
+    showContent.value === false
+  ) {
+    showContent.value = true;
+  }
+};
 
 onMounted((): void => {
-  requestAnimationFrame((): boolean => (showHeading.value = true));
+  requestAnimationFrame((): boolean => (showContent.value = true));
+  viewInContentDisplay();
+  document.addEventListener('scroll', (): void => viewInContentDisplay());
 });
 </script>
 
 <template>
-  <div class="h-screen w-full flex items-center justify-center px-12 md:px-8 lg:px-2 max-w-7xl mx-auto">
+  <div id="landing-section" class="h-screen w-full px-12 md:px-8 lg:px-2 max-w-7xl mx-auto">
     <div class="w-full h-full flex items-center justify-center md:justify-start">
-      <TransitionRoot :show="showHeading">
+      <TransitionRoot :show="showContent">
         <TransitionChild
           as="template"
           enter="duration-700 transition delay-150"

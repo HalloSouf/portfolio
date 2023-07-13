@@ -10,12 +10,18 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  css: ['@/assets/sass/app.sass', '@fortawesome/fontawesome-svg-core/styles.css'],
+  css: ['@/assets/sass/main.sass', '@fortawesome/fontawesome-svg-core/styles.css'],
   runtimeConfig: {
     public: {
       userLinkedinUrl: process.env.USER_LINKEDIN_URL || '',
-      userGithubUrl: process.env.USER_GITHUB_URL || ''
+      userGithubUrl: process.env.USER_GITHUB_URL || '',
+      userInstagramUrl: process.env.USER_INSTAGRAM_URL || ''
     }
   },
-  modules: ['@hypernym/nuxt-gsap']
+  modules: ['@hypernym/nuxt-gsap'],
+  gasp: {
+    extraPlugins: {
+      scrollTrigger: true
+    }
+  }
 });

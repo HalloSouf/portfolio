@@ -1,11 +1,13 @@
 <template>
   <div>
-    <Navbar />
+    <!-- <Navbar /> -->
 
     <div>
       <LandingSection />
 
-      <AboutMeSection />
+      <!-- <AboutMeSection />
+
+      <div class="h-screen" /> -->
     </div>
   </div>
 </template>

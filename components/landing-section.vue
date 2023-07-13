@@ -1,112 +1,102 @@
 <script setup lang="ts">
-import { TransitionRoot, TransitionChild } from '@headlessui/vue';
-
-const runtimeConfig = useRuntimeConfig();
+const config = useRuntimeConfig();
 const showContent = ref<boolean>(false);
-
-const viewInContentDisplay = (): void => {
-  const element = document.getElementById('landing-section');
-  if (!element) {
-    return;
-  }
-
-  if (
-    window.scrollY >= element.clientHeight - window.innerHeight / 2 &&
-    showContent.value === true
-  ) {
-    showContent.value = false;
-  } else if (
-    window.scrollY < element.clientHeight - window.innerHeight / 20 &&
-    showContent.value === false
-  ) {
-    showContent.value = true;
-  }
-};
 
 onMounted((): void => {
   requestAnimationFrame((): boolean => (showContent.value = true));
-  viewInContentDisplay();
-  document.addEventListener('scroll', (): void => viewInContentDisplay());
 });
 </script>
 
 <template>
-  <div id="landing-section" class="h-screen w-full px-12 md:px-8 lg:px-2 max-w-7xl mx-auto">
-    <div class="w-full h-full flex items-center justify-center md:justify-start">
-      <TransitionRoot :show="showContent">
-        <TransitionChild
-          as="template"
-          enter="duration-700 transition delay-150"
-          enter-from="opacity-0 -translate-x-20"
-          enter-to="opacity-100 translate-x-0"
-          leave="duration-700 transition"
-          leave-from="opacity-100 translate-x-0"
-          leave-to="opacity-0 -translate-x-20"
-        >
-          <span class="text-base md:text-lg text-gray-600 font-semibold">Zeg hallo tegen</span>
-        </TransitionChild>
-
-        <TransitionChild
-          key="heading-title"
-          enter="duration-700 transition"
-          enter-from="opacity-0 translate-y-full"
-          enter-to="opacity-100 translate-y-0"
-          leave="duration-700 transition"
-          leave-from="opacity-100 translate-y-0"
-          leave-to="opacity-0 translate-y-full"
-        >
-          <h1 class="text-5xl md:text-6xl font-bold text-sky-600 tracking-wide">Souf IT.</h1>
-          <p class="text-base md:text-lg mt-3">Verwelkom je nieuwe website met open armen.</p>
-        </TransitionChild>
-
-        <div class="flex items-center gap-x-6 mt-10">
-          <TransitionChild
-            key="heading-linkedin"
-            as="template"
-            enter="duration-700 transition"
-            enter-from="opacity-0 translate-y-full"
-            enter-to="opacity-100 translate-y-0"
-            class="bg-black w-12 h-12 flex items-center justify-center rounded-full"
-            leave="duration-700 transition"
-            leave-from="opacity-100 translate-y-0"
-            leave-to="opacity-0 translate-y-full"
-          >
-            <a
-              :href="`${runtimeConfig.public.userLinkedinUrl}`"
-              target="_blank"
-            >
-              <font-awesome-icon
-                :icon="['fab', 'linkedin-in']"
-                size="lg"
-                class="text-white"
-              />
-            </a>
-          </TransitionChild>
-
-          <TransitionChild
-            key="heading-linkedin"
-            as="template"
-            enter="duration-700 transition delay-100"
-            enter-from="opacity-0 translate-y-full"
-            enter-to="opacity-100 translate-y-0"
-            class="bg-black w-12 h-12 flex items-center justify-center rounded-full"
-            leave="duration-700 transition"
-            leave-from="opacity-100 translate-y-0"
-            leave-to="opacity-0 translate-y-full"
-          >
-            <a
-              :href="`${runtimeConfig.public.userGithubUrl}`"
-              target="_blank"
-            >
-              <font-awesome-icon
-                :icon="['fab', 'github']"
-                size="lg"
-                class="text-white"
-              />
-            </a>
-          </TransitionChild>
-        </div>
-      </TransitionRoot>
+  <header
+    id="landing-section"
+    class="h-screen w-full isolate"
+  >
+    <div
+      class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+      aria-hidden="true"
+    >
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-500 to-sky-600 opacity-20 sm:right-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        "
+      ></div>
     </div>
-  </div>
+
+    <div class="max-w-7xl mx-auto flex items-center h-full pb-20 px-10">
+      <div>
+        <h1
+          id="heading-title"
+          class="leading-loose"
+        >
+          <span class="heading-title">Hallo zeg je</span>
+          <br />
+          <span class="heading-title">tegen</span>
+          <span class="heading-title--marked">Souf IT.</span>
+        </h1>
+
+        <p
+          id="heading-subtitle"
+          class="heading-subtitle mt-5"
+        >
+          Verwelkom jij jouw nieuwe website met open armen?
+        </p>
+      </div>
+
+      <div class="absolute right-16 bottom-10">
+        <div class="flex flex-row gap-x-6">
+          <a
+            :href="config.public.userLinkedinUrl"
+            target="_blank"
+          >
+            <font-awesome-icon
+              :icon="['fab', 'linkedin']"
+              size="xl"
+              class="heading-icon"
+            />
+          </a>
+
+          <a
+            :href="config.public.userGithubUrl"
+            target="_blank"
+          >
+            <font-awesome-icon
+              :icon="['fab', 'github']"
+              size="xl"
+              class="heading-icon"
+            />
+          </a>
+
+          <a
+            :href="config.public.userInstagramUrl"
+            target="_blank"
+          >
+            <font-awesome-icon
+              :icon="['fab', 'instagram']"
+              size="xl"
+              class="heading-icon"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>

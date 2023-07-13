@@ -2,6 +2,20 @@
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue';
 
 const mobileMenu = ref<boolean>(false);
+
+/**
+ * Scrolls to the section with the given name.
+ * @param {string} name - The name of the section to scroll to.
+ * @returns {void}
+ */
+const scrollTo = (name: string): void => {
+  const element = document.getElementById(`${name}-section`);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+};
 </script>
 
 <template>
@@ -31,12 +45,12 @@ const mobileMenu = ref<boolean>(false);
       </div>
 
       <div class="hidden lg:flex lg:gap-x-12">
-        <a
-          href="#"
+        <button
           class="text-sm font-semibold leading-6 text-gray-900"
+          @click="() => scrollTo('about-me')"
         >
           Over mij
-        </a>
+        </button>
         <a
           href="#"
           class="text-sm font-semibold leading-6 text-gray-900"

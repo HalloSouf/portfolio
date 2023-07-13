@@ -4,6 +4,8 @@
 
     <div>
       <HomeSection />
+
+      <AboutMeSection />
     </div>
   </div>
 </template>

@@ -10,7 +10,7 @@ onMounted((): void => {
 </script>
 
 <template>
-  <div class="h-screen w-full flex items-center justify-center px-12 max-w-7xl mx-auto">
+  <div class="h-screen w-full flex items-center justify-center px-12 md:px-8 lg:px-2 max-w-7xl mx-auto">
     <div class="w-full h-full flex items-center justify-center md:justify-start">
       <TransitionRoot :show="showHeading">
         <TransitionChild

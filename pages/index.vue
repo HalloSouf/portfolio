@@ -17,6 +17,8 @@ useServerSeoMeta({
   <div>
     <div>
       <LandingSection />
+
+      <div class="h-screen" />
     </div>
   </div>
 </template>

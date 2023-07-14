@@ -10,7 +10,7 @@ onMounted((): void => {
       start: 'top bottom',
       end: 'bottom top',
       onEnterBack: (): GSAPTimeline => timelines.aboutMe.restart(),
-      onEnter: (): GSAPTimeline => timelines.aboutMe.isActive() ? timelines.aboutMe.restart() : timelines.aboutMe.play()
+      onEnter: (): GSAPTimeline => timelines.aboutMe.restart()
     })
   });
 
@@ -20,7 +20,7 @@ onMounted((): void => {
       start: 'top bottom',
       end: 'bottom top',
       onEnterBack: (): GSAPTimeline => timelines.aboutCompany.restart(),
-      onEnter: (): GSAPTimeline => timelines.aboutCompany.isActive() ? timelines.aboutCompany.restart() : timelines.aboutCompany.play()
+      onEnter: (): GSAPTimeline => timelines.aboutCompany.restart()
     })
   });
 
@@ -60,20 +60,20 @@ onMounted((): void => {
 
             <p class="text-gray-200 text-sm sm:text-base leading-loose mt-4">
               Hey hallo! 👋 Ik ben Soufiane, en in mijn vrije tijd ben ik bezig met bouwen van
-              websites. Naast mijn interesse in webontwikkeling, volg ik ook een HBO-ICT opleiding
+              websites. Naast mijn interesse in webontwikkeling volg ik ook een HBO-ICT opleiding
               aan het Windesheim.
             </p>
           </article>
 
           <article id="about-company">
             <h3 class="sm:text-lg text-base text-white font-semibold mt-10">
-              💻 Werkzaamheden <span class="text-sky-600 tracking-tight underline underline-offset-4 decoration-wavy break-keep">Souf IT.</span>
+              💻 Wat is <span class="text-sky-600 tracking-tight underline underline-offset-4 decoration-wavy break-keep">Souf IT.</span>
             </h3>
 
             <p class="text-gray-200 text-sm sm:text-base leading-loose mt-1">
-              Naast het technisch aspect, ben ik ook bezig met het realiseren van op maat
+              Naast het technisch aspect ben ik ook bezig met het realiseren van op maat
               gemaakte oplossingen voor particulieren en bedrijven. Met een luisterend oor voor elk
-              individu, realiseer ik een software oplossing voor de desbetreffende situatie.
+              individu realiseer ik software oplossingen voor de desbetreffende situatie.
             </p>
           </article>
         </div>

@@ -46,12 +46,12 @@ onMounted((): void => {
 <template>
   <section
     id="about-me-section"
-    class="h-screen"
+    class="min-h-screen"
   >
-    <div class="px-12 md:px-8 max-w-7xl h-full mx-auto">
-      <div class="w-full h-full flex md:flex-row flex-col-reverse items-center gap-x-20">
+    <div class="px-12 md:px-8 max-w-7xl min-h-screen mx-auto">
+      <div class="w-full min-h-screen flex md:flex-row flex-col-reverse items-center gap-x-20">
         <div class="w-full md:w-1/2 mt-10 flex justify-center">
-          <img id="about-me-presentation" src="/images/co2-presentation.jpg" class="rounded-lg w-[32rem] h-auto shadow-md" />
+          <img id="about-me-presentation" src="/images/co2-presentation.jpg" class="rounded-lg w-[32rem] h-auto shadow-md pb-20 md:pb-0" />
         </div>
 
         <div class="w-full text-left md:w-1/2">

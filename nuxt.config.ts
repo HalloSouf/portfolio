@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   modules: ['@hypernym/nuxt-gsap'],
   gsap: {
     extraPlugins: {
-      scrollTrigger: true
+      scrollTrigger: true,
+      scrollTo: true
     }
   }
 });

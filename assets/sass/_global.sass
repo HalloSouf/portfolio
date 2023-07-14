@@ -5,6 +5,24 @@
 
 $backgroundColor: #10101a
 
+html
+  scroll-behavior: smooth
+
 body
   font-family: 'Poppins', sans-serif
   background: $backgroundColor
+
+.navbar
+  @apply flex items-center justify-end lg:justify-center p-6 lg:px-8
+
+.navbar-item
+  @apply text-sm font-semibold leading-6 text-white
+  &--disabled
+    @extend .navbar-item
+    @apply opacity-50 cursor-default
+
+.navbar-fold
+  @apply fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-sky-700 px-6 py-6 sm:max-w-xs sm:ring-1 sm:ring-gray-900/10
+
+.navbar-fold-item
+  @apply -mx-2 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-white hover:bg-gray-50

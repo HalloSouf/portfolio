@@ -1,38 +1,55 @@
 <script setup lang="ts">
-import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue';
+import { TransitionRoot, TransitionChild, Dialog, DialogPanel } from '@headlessui/vue';
 
+const { $ScrollTrigger, $gsap } = useNuxtApp();
 const mobileMenu = ref<boolean>(false);
+const timelines: Record<string, GSAPTimeline> = {};
 
-/**
- * Scrolls to the section with the given name.
- * @param {string} name - The name of the section to scroll to.
- * @returns {void}
- */
-const scrollTo = (name: string): void => {
-  const element = document.getElementById(`${name}-section`);
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth'
+const scrollTo = (id: string, sidebar = false): void => {
+  if (sidebar) {
+    mobileMenu.value = false;
+
+    setTimeout(() => {
+      $gsap.to('html', {
+        scrollTo: `#${id}`,
+        duration: 1.0
+      });
+    }, 500);
+  } else {
+    $gsap.to('html', {
+      scrollTo: `#${id}`,
+      duration: 0.7
     });
   }
 };
+
+onMounted((): void => {
+  timelines.navbar = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: 'window',
+      start: 'top top',
+      end: '100px',
+      onEnterBack: (): GSAPTimeline => timelines.navbar.restart()
+    })
+  });
+
+  timelines.navbar.fromTo(
+    '#navbar',
+    { opacity: 0, y: -10 },
+    { opacity: 1, y: 0, duration: 0.7, delay: 1.0 }
+  );
+
+  timelines.navbar.play();
+});
 </script>
 
 <template>
-  <header class="bg-white absolute w-full">
+  <header class="absolute w-full z-10">
     <nav
-      class="flex items-center justify-between p-6 lg:px-8"
+      id="navbar"
+      class="navbar"
       aria-label="Global"
     >
-      <div class="flex lg:flex-1">
-        <a
-          href="/"
-          class="-m-1.5 p-1.5"
-        >
-          <span class="sr-only">Souf IT</span>
-        </a>
-      </div>
-
       <div class="flex lg:hidden">
         <button
           type="button"
@@ -40,35 +57,38 @@ const scrollTo = (name: string): void => {
           @click="mobileMenu = true"
         >
           <span class="sr-only">Open main menu</span>
-          <font-awesome-icon :icon="['fas', 'hamburger']" />
+          <font-awesome-icon
+            :icon="['fas', 'hamburger']"
+            class="text-xl text-white"
+          />
         </button>
       </div>
 
       <div class="hidden lg:flex lg:gap-x-12">
         <button
-          class="text-sm font-semibold leading-6 text-gray-900"
-          @click="() => scrollTo('about-me')"
+          class="navbar-item"
+          @click="() => scrollTo('about-me-section')"
         >
           Over mij
         </button>
+
         <a
           href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          class="navbar-item--disabled"
         >
           Vaardigheden
         </a>
+
         <a
           href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          class="navbar-item--disabled"
         >
           Projecten
         </a>
-      </div>
 
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          class="navbar-item--disabled"
         >
           Contact
         </a>
@@ -99,16 +119,14 @@ const scrollTo = (name: string): void => {
 
         <TransitionChild
           as="template"
-          enter="duration-300 ease-out"
+          enter="duration-500 ease-out"
           enter-from="opacity-0 translate-x-full"
           enter-to="opacity-100 translate-x-0"
-          leave="duration-200 ease-in"
+          leave="duration-500 ease-in"
           leave-from="opacity-100 translate-x-0"
           leave-to="opacity-0 translate-x-full"
         >
-          <DialogPanel
-            class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-          >
+          <DialogPanel class="navbar-fold">
             <div class="flex items-center justify-between">
               <div />
               <button
@@ -119,7 +137,7 @@ const scrollTo = (name: string): void => {
                 <span class="sr-only">Close menu</span>
                 <font-awesome-icon
                   :icon="['fas', 'times']"
-                  size="large"
+                  class="text-xl text-white"
                   aria-hidden="true"
                 />
               </button>
@@ -128,30 +146,18 @@ const scrollTo = (name: string): void => {
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                  <a
-                    class="-mx-2 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  <button
+                    class="navbar-fold-item focus:bg-transparent"
+                    @click="() => scrollTo('about-me-section', true)"
                   >
-                    About Me
-                  </a>
-                  <a
-                    class="-mx-2 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Skills
-                  </a>
-                  <a
-                    class="-mx-2 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Projects
-                  </a>
-                </div>
+                    Over mij
+                  </button>
 
-                <div class="py-6">
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Contact
-                  </a>
+                  <button class="navbar-fold-item">Vaardigheden</button>
+
+                  <button class="navbar-fold-item">Projecten</button>
+
+                  <button class="navbar-fold-item">Projecten</button>
                 </div>
               </div>
             </div>

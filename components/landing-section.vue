@@ -2,12 +2,9 @@
 const { $ScrollTrigger, $gsap } = useNuxtApp();
 const config = useRuntimeConfig();
 
-const showContent = ref<boolean>(false);
 const timelines: Record<string, GSAPTimeline> = {};
 
 onMounted((): void => {
-  requestAnimationFrame((): boolean => (showContent.value = true));
-
   timelines.heading = $gsap.timeline({
     scrollTrigger: $ScrollTrigger.create({
       trigger: '#heading',
@@ -51,35 +48,6 @@ onMounted((): void => {
     id="landing-section"
     class="h-screen w-full isolate"
   >
-    <div
-      class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      aria-hidden="true"
-    >
-      <div
-        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-500 to-sky-600 opacity-20 sm:right-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        style="
-          clip-path: polygon(
-            74.1% 44.1%,
-            100% 61.6%,
-            97.5% 26.9%,
-            85.5% 0.1%,
-            80.7% 2%,
-            72.5% 32.5%,
-            60.2% 62.4%,
-            52.4% 68.1%,
-            47.5% 58.3%,
-            45.2% 34.5%,
-            27.5% 76.7%,
-            0.1% 64.9%,
-            17.9% 100%,
-            27.6% 76.8%,
-            76.1% 97.7%,
-            74.1% 44.1%
-          );
-        "
-      ></div>
-    </div>
-
     <div class="max-w-7xl mx-auto flex items-center h-full pb-20 px-10">
       <div id="heading">
         <h1
@@ -101,7 +69,10 @@ onMounted((): void => {
       </div>
 
       <div class="absolute right-16 bottom-10">
-        <div id="heading-links" class="flex flex-row gap-x-6">
+        <div
+          id="heading-links"
+          class="flex flex-row gap-x-6"
+        >
           <a
             :href="config.public.userLinkedinUrl"
             target="_blank"
@@ -136,6 +107,35 @@ onMounted((): void => {
           </a>
         </div>
       </div>
+    </div>
+
+    <div
+      class="absolute inset-x-0 bottom-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-0"
+      aria-hidden="true"
+    >
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-500 to-sky-600 opacity-20 sm:right-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        "
+      ></div>
     </div>
   </header>
 </template>

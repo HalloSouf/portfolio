@@ -60,51 +60,51 @@ onMounted((): void => {
           <span class="heading-title--marked">Souf IT.</span>
         </h1>
 
-        <p
-          id="heading-subtitle"
-          class="heading-subtitle mt-5"
-        >
-          Verwelkom jij jouw nieuwe website met open armen?
-        </p>
-      </div>
-
-      <div class="absolute right-16 bottom-10">
-        <div
-          id="heading-links"
-          class="flex flex-row gap-x-6"
-        >
-          <a
-            :href="config.public.userLinkedinUrl"
-            target="_blank"
+        <div id="heading-sub">
+          <p
+            id="heading-subtitle"
+            class="heading-subtitle mt-5"
           >
-            <font-awesome-icon
-              :icon="['fab', 'linkedin']"
-              size="xl"
-              class="heading-icon"
-            />
-          </a>
+            Samen ontdekken wij grenzeloze mogelijkheden. <span class="block">Laten we kennis maken.</span>
+          </p>
 
-          <a
-            :href="config.public.userGithubUrl"
-            target="_blank"
+          <div
+            id="heading-links"
+            class="flex flex-row gap-x-6 mt-10"
           >
-            <font-awesome-icon
-              :icon="['fab', 'github']"
-              size="xl"
-              class="heading-icon"
-            />
-          </a>
+            <a
+              :href="config.public.userLinkedinUrl"
+              target="_blank"
+            >
+              <font-awesome-icon
+                :icon="['fab', 'linkedin']"
+                size="xl"
+                class="heading-icon"
+              />
+            </a>
 
-          <a
-            :href="config.public.userInstagramUrl"
-            target="_blank"
-          >
-            <font-awesome-icon
-              :icon="['fab', 'instagram']"
-              size="xl"
-              class="heading-icon"
-            />
-          </a>
+            <a
+              :href="config.public.userGithubUrl"
+              target="_blank"
+            >
+              <font-awesome-icon
+                :icon="['fab', 'github']"
+                size="xl"
+                class="heading-icon"
+              />
+            </a>
+
+            <a
+              :href="config.public.userInstagramUrl"
+              target="_blank"
+            >
+              <font-awesome-icon
+                :icon="['fab', 'instagram']"
+                size="xl"
+                class="heading-icon"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

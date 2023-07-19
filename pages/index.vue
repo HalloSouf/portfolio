@@ -45,13 +45,19 @@ onMounted((): void => {
 
     <div>
       <div class="relative">
-        <LandingSection />
+        <SectionsLandingSection />
       </div>
 
-      <AboutMeSection />
+      <div class="relative">
+        <SectionsAboutMeSection />
+      </div>
 
-      <SkillsSection />
+      <div class="relative">
+        <SectionsSkillsSection />
+      </div>
     </div>
+
+    <Footer />
 
     <div class="fixed bottom-5 right-10">
       <TransitionRoot

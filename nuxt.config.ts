@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     public: {
       userLinkedinUrl: process.env.USER_LINKEDIN_URL || '',
       userGithubUrl: process.env.USER_GITHUB_URL || '',
-      userInstagramUrl: process.env.USER_INSTAGRAM_URL || ''
+      userInstagramUrl: process.env.USER_INSTAGRAM_URL || '',
+      userDiscordUrl: process.env.USER_DISCORD_URL || ''
     }
   },
   modules: ['@hypernym/nuxt-gsap'],

@@ -72,12 +72,12 @@ onMounted((): void => {
           Over mij
         </button>
 
-        <a
-          href="#"
-          class="navbar-item--disabled"
+        <button
+          class="navbar-item"
+          @click="() => scrollTo('skills-section')"
         >
           Vaardigheden
-        </a>
+        </button>
 
         <a
           href="#"
@@ -153,7 +153,12 @@ onMounted((): void => {
                     Over mij
                   </button>
 
-                  <button class="navbar-fold-item">Vaardigheden</button>
+                  <button
+                    class="navbar-fold-item focus:bg-transparent"
+                    @click="() => scrollTo('skills-section', true)"
+                  >
+                    Vaardigheden
+                  </button>
 
                   <button class="navbar-fold-item">Projecten</button>
 

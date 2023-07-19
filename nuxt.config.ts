@@ -22,6 +22,13 @@ export default defineNuxtConfig({
       userDiscordUrl: process.env.USER_DISCORD_URL || ''
     }
   },
+  app: {
+    head: {
+      meta: [
+        { name: 'keywords', content: 'Souf IT, Souf, IT, Soufiane Seddouki, HalloSouf, Zeg Hallo Tegen Souf IT, SoufIT, Souf-IT' }
+      ]
+    }
+  },
   modules: ['@hypernym/nuxt-gsap'],
   gsap: {
     extraPlugins: {

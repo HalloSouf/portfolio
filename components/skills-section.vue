@@ -10,8 +10,7 @@ onMounted((): void => {
       start: 'top bottom',
       end: 'bottom top',
       onEnter: (): GSAPTimeline => timelines.heading.restart(),
-      onEnterBack: (): GSAPTimeline => timelines.heading.restart(),
-      markers: true
+      onEnterBack: (): GSAPTimeline => timelines.heading.restart()
     })
   });
 
@@ -107,12 +106,14 @@ onMounted((): void => {
             id="skills-frontend"
             class="w-full py-5 px-10"
           >
-            <h2 class="text-white font-semibold text-2xl">
-              <font-awesome-icon
-                :icon="['fas', 'code']"
-                class="text-xl"
-              />
-              <span class="ml-4">Front-end</span>
+            <h2 class="text-white font-semibold text-2xl flex gap-x-4">
+              <i>
+                <font-awesome-icon
+                  :icon="['fas', 'code']"
+                  class="text-xl"
+                />
+              </i>
+              Front-end
             </h2>
 
             <ul class="mt-5 flex flex-col gap-y-6">
@@ -158,13 +159,19 @@ onMounted((): void => {
             </ul>
           </div>
 
-          <div id="skills-backend" class="w-full py-5 px-10">
-            <h2 class="text-white font-semibold text-2xl">
-              <font-awesome-icon
-                :icon="['fas', 'server']"
-                class="text-xl"
-              />
-              <span class="ml-4">Back-end</span>
+          <div
+            id="skills-backend"
+            class="w-full py-5 px-10"
+          >
+            <h2 class="text-white font-semibold text-2xl gap-x-4 flex">
+              <i>
+                <font-awesome-icon
+                  :icon="['fas', 'server']"
+                  class="text-xl"
+                />
+              </i>
+
+              Back-end
             </h2>
 
             <ul class="mt-5 flex flex-col gap-y-6">
@@ -226,13 +233,18 @@ onMounted((): void => {
             </ul>
           </div>
 
-          <div id="skills-tools" class="w-full py-5 px-10">
-            <h2 class="text-white font-semibold text-2xl">
-              <font-awesome-icon
-                :icon="['fas', 'toolbox']"
-                class="text-xl"
-              />
-              <span class="ml-4">Hulpmiddelen</span>
+          <div
+            id="skills-tools"
+            class="w-full py-5 px-10"
+          >
+            <h2 class="text-white font-semibold text-2xl flex items-center gap-x-4">
+              <i>
+                <font-awesome-icon
+                  :icon="['fas', 'toolbox']"
+                  class="text-xl"
+                />
+              </i>
+              Hulpmiddelen
             </h2>
 
             <ul class="mt-5 flex flex-col gap-y-6">
@@ -272,7 +284,7 @@ onMounted((): void => {
         </div>
       </div>
 
-      <!-- <div
+      <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
       >
@@ -299,7 +311,7 @@ onMounted((): void => {
             );
           "
         ></div>
-      </div> -->
+      </div>
     </div>
   </section>
 </template>

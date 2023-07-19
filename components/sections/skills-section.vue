@@ -77,7 +77,7 @@ onMounted((): void => {
 </script>
 
 <template>
-  <section id="skills-sections" class="min-h-screen relative">
+  <section id="skills-section" class="min-h-screen relative">
     <div class="px-12 md:px-8 max-w-7xl min-h-screen mx-auto">
       <div class="w-full min-h-screen flex justify-center flex-col">
         <div id="skills-heading">

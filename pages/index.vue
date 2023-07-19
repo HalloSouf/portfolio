@@ -49,6 +49,8 @@ onMounted((): void => {
       </div>
 
       <AboutMeSection />
+
+      <SkillsSection />
     </div>
 
     <div class="fixed bottom-5 right-10">

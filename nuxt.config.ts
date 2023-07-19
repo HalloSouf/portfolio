@@ -10,7 +10,10 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  css: ['@/assets/sass/main.sass', '@fortawesome/fontawesome-svg-core/styles.css'],
+  css: [
+    '@/assets/sass/main.sass',
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
   runtimeConfig: {
     public: {
       userLinkedinUrl: process.env.USER_LINKEDIN_URL || '',

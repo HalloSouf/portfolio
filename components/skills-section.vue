@@ -100,7 +100,7 @@ onMounted((): void => {
         </div>
 
         <div
-          class="border-b border-[#1c1c2e] border-t mt-10 w-full flex flex-row divide-x divide-neutral-900/40"
+          class="border-b border-[#1c1c2e] border-t mt-10 w-full flex flex-col md:flex-row divide-y md:divide-x divide-neutral-900/40"
         >
           <div
             id="skills-frontend"

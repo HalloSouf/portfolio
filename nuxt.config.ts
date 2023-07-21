@@ -29,7 +29,10 @@ export default defineNuxtConfig({
           content:
             'Souf IT, Souf, IT, Soufiane Seddouki, HalloSouf, Zeg Hallo Tegen Souf IT, SoufIT, Souf-IT'
         }
-      ]
+      ],
+      htmlAttrs: {
+        lang: 'nl'
+      }
     }
   },
   modules: ['@hypernym/nuxt-gsap', '@nuxt/image'],

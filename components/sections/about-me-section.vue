@@ -72,14 +72,14 @@ onMounted((): void => {
           </article>
 
           <article id="about-company">
-            <h3 class="sm:text-lg text-base text-white font-semibold mt-10">
+            <h2 class="sm:text-lg text-base text-white font-semibold mt-10">
               💻 Wat is
               <span
                 class="text-sky-600 tracking-tight underline underline-offset-4 decoration-wavy break-keep"
               >
                 Souf IT.
               </span>
-            </h3>
+            </h2>
 
             <p class="text-gray-200 text-sm sm:text-base leading-loose mt-1">
               Naast het technisch aspect ben ik ook bezig met het realiseren van op maat gemaakte

@@ -120,8 +120,8 @@ onMounted((): void => {
             <ul class="mt-5 flex flex-col gap-y-6">
               <li class="skills-item--frontend">
                 <NuxtImg
-                  src="~/assets/images/logo-svelte.png"
-                  format="webp"
+                  src="/images/logo-svelte.png"
+                  format=""
                   alt="SvelteKit"
                   class="logo-image--rounded"
                 />
@@ -129,8 +129,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--frontend">
-                <img
-                  src="~/assets/images/logo-nuxt.svg"
+                <NuxtImg
+                  src="/images/logo-nuxt.svg"
                   format="webp"
                   alt="Nuxt"
                   class="logo-image"
@@ -139,8 +139,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--frontend">
-                <img
-                  src="~/assets/images/logo-laravel.png"
+                <NuxtImg
+                  src="/images/logo-laravel.png"
                   format="webp"
                   alt="Laravel"
                   class="logo-image"
@@ -149,8 +149,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--frontend">
-                <img
-                  src="~/assets/images/logo-react.svg"
+                <NuxtImg
+                  src="/images/logo-react.svg"
                   format="webp"
                   alt="React"
                   class="logo-image"
@@ -159,8 +159,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--frontend">
-                <img
-                  src="~/assets/images/logo-tailwind.png"
+                <NuxtImg
+                  src="/images/logo-tailwind.png"
                   format="webp"
                   alt="TailwindCSS"
                   class="logo-image--rounded"
@@ -187,8 +187,8 @@ onMounted((): void => {
 
             <ul class="mt-5 flex flex-col gap-y-6">
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-express.png"
+                <NuxtImg
+                  src="/images/logo-express.png"
                   format="webp"
                   alt="ExpressJS"
                   class="logo-image--rounded"
@@ -197,8 +197,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-laravel.png"
+                <NuxtImg
+                  src="/images/logo-laravel.png"
                   format="webp"
                   alt="Laravel API"
                   class="logo-image"
@@ -207,8 +207,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-prisma.webp"
+                <NuxtImg
+                  src="/images/logo-prisma.webp"
                   format="webp"
                   alt="Prisma"
                   class="logo-image--rounded"
@@ -217,8 +217,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-rabbitmq.png"
+                <NuxtImg
+                  src="/images/logo-rabbitmq.png"
                   format="webp"
                   alt="RabbitMQ"
                   class="logo-image"
@@ -227,8 +227,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-mongodb.png"
+                <NuxtImg
+                  src="/images/logo-mongodb.png"
                   format="webp"
                   alt="MongoDB"
                   class="logo-image--rounded"
@@ -237,8 +237,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-mysql.png"
+                <NuxtImg
+                  src="/images/logo-mysql.png"
                   format="webp"
                   alt="MySQL"
                   class="logo-image"
@@ -247,8 +247,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--backend">
-                <img
-                  src="~/assets/images/logo-redis.png"
+                <NuxtImg
+                  src="/images/logo-redis.png"
                   format="webp"
                   alt="RedisDB"
                   class="logo-image"
@@ -274,8 +274,8 @@ onMounted((): void => {
 
             <ul class="mt-5 flex flex-col gap-y-6">
               <li class="skills-item--tools">
-                <img
-                  src="~/assets/images/logo-code.png"
+                <NuxtImg
+                  src="/images/logo-code.png"
                   format="webp"
                   alt="Visual Studio Code"
                   class="logo-image"
@@ -284,8 +284,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--tools">
-                <img
-                  src="~/assets/images/logo-vercel.webp"
+                <NuxtImg
+                  src="/images/logo-vercel.webp"
                   format="webp"
                   alt="Vercel"
                   class="logo-image--rounded"
@@ -294,8 +294,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--tools">
-                <img
-                  src="~/assets/images/logo-cloudflare.png"
+                <NuxtImg
+                  src="/images/logo-cloudflare.png"
                   format="webp"
                   alt="Cloudflare"
                   class="logo-image--rounded"
@@ -304,8 +304,8 @@ onMounted((): void => {
               </li>
 
               <li class="skills-item--tools">
-                <img
-                  src="~/assets/images/logo-github.png"
+                <NuxtImg
+                  src="/images/logo-github.png"
                   format="webp"
                   alt="Github"
                   class="logo-image--rounded"

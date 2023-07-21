@@ -47,7 +47,10 @@
 
       <div class="mt-8 md:order-1 md:mt-0">
         <p class="text-center text-xs leading-5 text-gray-500">
-          KvK: 90534468
+          KvK: {{ $config.public.companyCoc }}
+        </p>
+        <p class="text-center text-xs leading-5 text-gray-500">
+          BTW: {{ $config.public.companyVat }}
         </p>
       </div>
     </div>

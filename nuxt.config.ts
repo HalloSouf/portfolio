@@ -32,7 +32,11 @@ export default defineNuxtConfig({
       ],
       htmlAttrs: {
         lang: 'nl'
-      }
+      },
+      link: [
+        { rel: 'icon', href: '/images/soufit-logo.svg', type: 'image/svg+xml' },
+        { rel: 'manifest', href: '/manifest.json' }
+      ]
     }
   },
   modules: ['@hypernym/nuxt-gsap', '@nuxt/image'],

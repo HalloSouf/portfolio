@@ -1,0 +1,13 @@
+{
+  "name": "Souf IT",
+  "short_name": "soufit",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/images/soufit-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "105x105"
+    }
+  ]
+}

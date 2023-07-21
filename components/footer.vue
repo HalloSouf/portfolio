@@ -1,8 +1,3 @@
-<script setup lang="ts">
-const config = useRuntimeConfig();
-console.log(config);
-</script>
-
 <template>
   <footer>
     <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">

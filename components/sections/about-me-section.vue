@@ -51,10 +51,12 @@ onMounted((): void => {
     <div class="px-12 md:px-8 max-w-7xl min-h-screen mx-auto">
       <div class="w-full min-h-screen flex md:flex-row flex-col-reverse items-center gap-x-20">
         <div class="w-full md:w-1/2 mt-10 flex justify-center">
-          <img
+          <NuxtImg
             id="about-me-presentation"
             src="/images/co2-presentation.jpg"
-            class="rounded-lg w-[32rem] h-auto shadow-md pb-20 md:pb-0"
+            format="webp"
+            alt="CO2 Presentation"
+            class="rounded-lg w-[32rem] h-auto shadow-md pb-20: md:pb-0"
           />
         </div>
 

@@ -119,8 +119,10 @@ onMounted((): void => {
 
             <ul class="mt-5 flex flex-col gap-y-6">
               <li class="skills-item--frontend">
-                <img
+                <NuxtImg
                   src="~/assets/images/logo-svelte.png"
+                  format="webp"
+                  alt="SvelteKit"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">SvelteKit</span>
@@ -129,6 +131,8 @@ onMounted((): void => {
               <li class="skills-item--frontend">
                 <img
                   src="~/assets/images/logo-nuxt.svg"
+                  format="webp"
+                  alt="Nuxt"
                   class="logo-image"
                 />
                 <span class="text font-medium">Nuxt</span>
@@ -137,6 +141,8 @@ onMounted((): void => {
               <li class="skills-item--frontend">
                 <img
                   src="~/assets/images/logo-laravel.png"
+                  format="webp"
+                  alt="Laravel"
                   class="logo-image"
                 />
                 <span class="text font-medium">laravel</span>
@@ -145,6 +151,8 @@ onMounted((): void => {
               <li class="skills-item--frontend">
                 <img
                   src="~/assets/images/logo-react.svg"
+                  format="webp"
+                  alt="React"
                   class="logo-image"
                 />
                 <span class="text font-medium">React (Native)</span>
@@ -153,6 +161,8 @@ onMounted((): void => {
               <li class="skills-item--frontend">
                 <img
                   src="~/assets/images/logo-tailwind.png"
+                  format="webp"
+                  alt="TailwindCSS"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Tailwind CSS</span>
@@ -179,6 +189,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-express.png"
+                  format="webp"
+                  alt="ExpressJS"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">ExpressJS</span>
@@ -187,6 +199,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-laravel.png"
+                  format="webp"
+                  alt="Laravel API"
                   class="logo-image"
                 />
                 <span class="text font-medium">Laravel API</span>
@@ -195,6 +209,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-prisma.webp"
+                  format="webp"
+                  alt="Prisma"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Prisma</span>
@@ -203,6 +219,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-rabbitmq.png"
+                  format="webp"
+                  alt="RabbitMQ"
                   class="logo-image"
                 />
                 <span class="text font-medium">Rabbit MQ</span>
@@ -211,6 +229,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-mongodb.png"
+                  format="webp"
+                  alt="MongoDB"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Mongo DB</span>
@@ -219,6 +239,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-mysql.png"
+                  format="webp"
+                  alt="MySQL"
                   class="logo-image"
                 />
                 <span class="text font-medium">MySQL</span>
@@ -227,6 +249,8 @@ onMounted((): void => {
               <li class="skills-item--backend">
                 <img
                   src="~/assets/images/logo-redis.png"
+                  format="webp"
+                  alt="RedisDB"
                   class="logo-image"
                 />
                 <span class="text font-medium">Redis DB</span>
@@ -252,6 +276,8 @@ onMounted((): void => {
               <li class="skills-item--tools">
                 <img
                   src="~/assets/images/logo-code.png"
+                  format="webp"
+                  alt="Visual Studio Code"
                   class="logo-image"
                 />
                 <span class="text font-medium">Visual Studio Code</span>
@@ -260,6 +286,8 @@ onMounted((): void => {
               <li class="skills-item--tools">
                 <img
                   src="~/assets/images/logo-vercel.webp"
+                  format="webp"
+                  alt="Vercel"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Vercel</span>
@@ -268,6 +296,8 @@ onMounted((): void => {
               <li class="skills-item--tools">
                 <img
                   src="~/assets/images/logo-cloudflare.png"
+                  format="webp"
+                  alt="Cloudflare"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Cloudflare</span>
@@ -276,6 +306,8 @@ onMounted((): void => {
               <li class="skills-item--tools">
                 <img
                   src="~/assets/images/logo-github.png"
+                  format="webp"
+                  alt="Github"
                   class="logo-image--rounded"
                 />
                 <span class="text font-medium">Github</span>

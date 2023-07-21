@@ -145,7 +145,7 @@ onMounted((): void => {
                   alt="Laravel"
                   class="logo-image"
                 />
-                <span class="text font-medium">laravel</span>
+                <span class="text font-medium">Laravel</span>
               </li>
 
               <li class="skills-item--frontend">

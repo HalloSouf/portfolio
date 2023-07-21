@@ -65,7 +65,8 @@ onMounted((): void => {
             id="heading-subtitle"
             class="heading-subtitle mt-5"
           >
-            Samen ontdekken wij grenzeloze mogelijkheden. <span class="block">Laten we kennis maken.</span>
+            Samen ontdekken wij grenzeloze mogelijkheden.
+            <span class="block">Laten we kennis maken.</span>
           </p>
 
           <div
@@ -76,6 +77,7 @@ onMounted((): void => {
               :href="config.public.userLinkedinUrl"
               target="_blank"
             >
+              <span class="sr-only">LinkedIn</span>
               <font-awesome-icon
                 :icon="['fab', 'linkedin']"
                 size="xl"
@@ -87,6 +89,7 @@ onMounted((): void => {
               :href="config.public.userGithubUrl"
               target="_blank"
             >
+              <span class="sr-only">Github</span>
               <font-awesome-icon
                 :icon="['fab', 'github']"
                 size="xl"
@@ -98,6 +101,7 @@ onMounted((): void => {
               :href="config.public.userInstagramUrl"
               target="_blank"
             >
+              <span class="sr-only">Instagram</span>
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
                 size="xl"

@@ -21,9 +21,9 @@ useServerSeoMeta({
   ogLocale: 'nl_NL',
   themeColor: '#10101a',
   ogImage: 'https://soufit.nl/images/soufit-banner.png',
-  twitterImage: 'https://soufit.nl/images/soufit-banner.png',
   ogImageHeight: '630',
-  ogImageWidth: '1200'
+  ogImageWidth: '1200',
+  ogImageType: 'image/png'
 });
 
 /**

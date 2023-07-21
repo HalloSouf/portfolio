@@ -16,7 +16,7 @@ onMounted((): void => {
 
   timelines.frontend = $gsap.timeline({
     scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-frontend',
+      trigger: '#skills-list',
       start: 'top bottom',
       end: 'bottom top',
       onEnter: (): GSAPTimeline => timelines.frontend.restart(),
@@ -26,7 +26,7 @@ onMounted((): void => {
 
   timelines.backend = $gsap.timeline({
     scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-backend',
+      trigger: '#skills-list',
       start: 'top bottom',
       end: 'bottom top',
       onEnter: (): GSAPTimeline => timelines.backend.restart(),
@@ -36,7 +36,7 @@ onMounted((): void => {
 
   timelines.tools = $gsap.timeline({
     scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-tools',
+      trigger: '#skills-list',
       start: 'top bottom',
       end: 'bottom top',
       onEnter: (): GSAPTimeline => timelines.tools.restart(),
@@ -100,6 +100,7 @@ onMounted((): void => {
         </div>
 
         <div
+          id="skills-list"
           class="border-b border-[#1c1c2e] border-t mt-10 w-full flex flex-col md:flex-row divide-y md:divide-x divide-neutral-900/40"
         >
           <div

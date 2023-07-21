@@ -64,6 +64,21 @@ onMounted((): void => {
         </button>
       </div>
 
+      <div class="flex lg:flex-1">
+        <a
+          href="#"
+          class="-m-1.5 p-1.5 flex items-center gap-x-1"
+        >
+          <span class="sr-only">Souf IT</span>
+          <NuxtImg
+            class="h-8 w-auto"
+            src="/images/soufit-logo.svg"
+            alt="gamers"
+          />
+          <span class="font-bold text-wider text-sky-600">Souf IT.</span>
+        </a>
+      </div>
+
       <div class="hidden lg:flex lg:gap-x-12">
         <button
           class="navbar-item"
@@ -92,6 +107,14 @@ onMounted((): void => {
         >
           Contact
         </a>
+      </div>
+
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a
+          href="#"
+          class="text-sm font-semibold leading-6 text-gray-900"
+          >Contact <span aria-hidden="true">&rarr;</span></a
+        >
       </div>
     </nav>
 

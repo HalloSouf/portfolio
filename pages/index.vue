@@ -6,7 +6,7 @@ const { $gsap } = useNuxtApp();
 const scrollPosition = ref<number>(0);
 
 useServerSeoMeta({
-  title: 'Souf IT | Voor jouw IT oplossingen',
+  title: 'Souf IT: Voor jouw IT oplossingen · Souf IT',
   description:
     'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Doe je mee?',
   author: 'HalloSouf',
@@ -15,9 +15,15 @@ useServerSeoMeta({
     'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Doe je mee?',
   viewport: 'width=device-width, initial-scale=1.0',
   ogUrl: 'https://soufit.nl',
-  ogTitle: 'Souf IT | Voor jouw IT oplossingen',
+  ogTitle: 'Souf IT: Voor jouw IT oplossingen',
   ogSiteName: 'Souf IT',
-  ogType: 'website'
+  ogType: 'website',
+  ogLocale: 'nl_NL',
+  themeColor: '#10101a',
+  ogImage: 'https://soufit.nl/images/soufit-banner.png',
+  twitterImage: 'https://soufit.nl/images/soufit-banner.png',
+  ogImageHeight: '630',
+  ogImageWidth: '1200'
 });
 
 /**
@@ -54,6 +60,10 @@ onMounted((): void => {
 
       <div class="relative">
         <SectionsSkillsSection />
+      </div>
+
+      <div class="relative">
+        <SectionsProjectsSection />
       </div>
     </div>
 

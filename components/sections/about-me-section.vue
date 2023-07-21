@@ -56,7 +56,7 @@ onMounted((): void => {
             src="/images/co2-presentation.jpg"
             format="webp"
             alt="CO2 Presentation"
-            class="rounded-lg w-[32rem] h-auto shadow-md pb-20: md:pb-0"
+            class="rounded-lg w-[32rem] h-full shadow-md pb-20: md:pb-0"
           />
         </div>
 

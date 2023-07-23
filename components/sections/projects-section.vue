@@ -1,25 +1,3 @@
-<script setup lang="ts">
-const { $ScrollTrigger, $gsap } = useNuxtApp();
-
-const timelines: Record<string, GSAPTimeline> = {};
-
-onMounted((): void => {
-  timelines.projects = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#projects-overview',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnterBack: (): GSAPTimeline => timelines.projects.restart(),
-      onEnter: (): GSAPTimeline => timelines.projects.restart()
-    })
-  });
-
-  document.querySelectorAll('.project-card').forEach((element) => {
-    timelines.projects.fromTo(element, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7 });
-  });
-});
-</script>
-
 <template>
   <section
     id="projects-section"
@@ -140,3 +118,29 @@ onMounted((): void => {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { $ScrollTrigger, $gsap } = useNuxtApp();
+
+const timelines: Record<string, GSAPTimeline> = {};
+
+/**
+ * Initializes the timeline animation on mount.
+ * @returns {void}
+ */
+onMounted((): void => {
+  timelines.projects = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#projects-overview',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnterBack: (): GSAPTimeline => timelines.projects.restart(),
+      onEnter: (): GSAPTimeline => timelines.projects.restart()
+    })
+  });
+
+  document.querySelectorAll('.project-card').forEach((element) => {
+    timelines.projects.fromTo(element, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7 });
+  });
+});
+</script>

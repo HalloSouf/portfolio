@@ -1,48 +1,3 @@
-<script setup lang="ts">
-import { TransitionRoot, TransitionChild, Dialog, DialogPanel } from '@headlessui/vue';
-
-const { $ScrollTrigger, $gsap } = useNuxtApp();
-const mobileMenu = ref<boolean>(false);
-const timelines: Record<string, GSAPTimeline> = {};
-
-const scrollTo = (id: string, sidebar = false): void => {
-  if (sidebar) {
-    mobileMenu.value = false;
-
-    setTimeout(() => {
-      $gsap.to('html', {
-        scrollTo: `#${id}`,
-        duration: 1.0
-      });
-    }, 500);
-  } else {
-    $gsap.to('html', {
-      scrollTo: `#${id}`,
-      duration: 0.7
-    });
-  }
-};
-
-onMounted((): void => {
-  timelines.navbar = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: 'window',
-      start: 'top top',
-      end: '100px',
-      onEnterBack: (): GSAPTimeline => timelines.navbar.restart()
-    })
-  });
-
-  timelines.navbar.fromTo(
-    '#navbar',
-    { opacity: 0, y: -10 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 1.0 }
-  );
-
-  timelines.navbar.play();
-});
-</script>
-
 <template>
   <header class="absolute w-full z-10">
     <nav
@@ -101,8 +56,8 @@ onMounted((): void => {
 
       <div class="hidden lg:flex">
         <a
-          href="#"
-          class="navbar-item--disabled"
+          href="/contact"
+          class="navbar-item"
         >
           Contact
           <i class="ml-2">
@@ -183,13 +138,6 @@ onMounted((): void => {
                   >
                     Projecten
                   </button>
-
-                  <button
-                    class="navbar-fold-item focus:bg-transparent"
-                    @click="() => scrollTo('projects-section', true)"
-                  >
-                    Contact
-                  </button>
                 </div>
               </div>
             </div>
@@ -199,3 +147,59 @@ onMounted((): void => {
     </TransitionRoot>
   </header>
 </template>
+
+<script setup lang="ts">
+import { TransitionRoot, TransitionChild, Dialog, DialogPanel } from '@headlessui/vue';
+
+const { $ScrollTrigger, $gsap } = useNuxtApp();
+const mobileMenu = ref<boolean>(false);
+
+const timelines: Record<string, GSAPTimeline> = {};
+
+/**
+ * Scrolls to the element with the specified ID.
+ * @param {string} id - The ID of the element to scroll to.
+ * @param {boolean} [sidebar=false] - Whether the sidebar is open or not.
+ * @returns {void}
+ */
+const scrollTo = (id: string, sidebar = false): void => {
+  if (sidebar) {
+    mobileMenu.value = false;
+
+    setTimeout(() => {
+      $gsap.to('html', {
+        scrollTo: `#${id}`,
+        duration: 1.0
+      });
+    }, 500);
+  } else {
+    $gsap.to('html', {
+      scrollTo: `#${id}`,
+      duration: 0.7
+    });
+  }
+};
+
+/**
+ * Initializes the navbar timeline animation on mount.
+ * @returns {void}
+ */
+onMounted((): void => {
+  timelines.navbar = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: 'window',
+      start: 'top top',
+      end: '100px',
+      onEnterBack: (): GSAPTimeline => timelines.navbar.restart()
+    })
+  });
+
+  timelines.navbar.fromTo(
+    '#navbar',
+    { opacity: 0, y: -10 },
+    { opacity: 1, y: 0, duration: 0.7, delay: 1.0 }
+  );
+
+  timelines.navbar.play();
+});
+</script>

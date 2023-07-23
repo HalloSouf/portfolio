@@ -1,48 +1,3 @@
-<script setup lang="ts">
-const { $ScrollTrigger, $gsap } = useNuxtApp();
-
-const timelines: Record<string, GSAPTimeline> = {};
-
-onMounted((): void => {
-  timelines.aboutMe = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#about-me',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnterBack: (): GSAPTimeline => timelines.aboutMe.restart(),
-      onEnter: (): GSAPTimeline => timelines.aboutMe.restart()
-    })
-  });
-
-  timelines.aboutCompany = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#about-company',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnterBack: (): GSAPTimeline => timelines.aboutCompany.restart(),
-      onEnter: (): GSAPTimeline => timelines.aboutCompany.restart()
-    })
-  });
-
-  timelines.aboutMe.fromTo(
-    '#about-me',
-    { opacity: 0, x: -12 },
-    { opacity: 1, x: 0, duration: 0.7 }
-  );
-
-  timelines.aboutCompany.fromTo(
-    '#about-me-presentation',
-    { opacity: 0 },
-    { opacity: 1, duration: 1 }
-  );
-  timelines.aboutCompany.fromTo(
-    '#about-company',
-    { opacity: 0, x: -12 },
-    { opacity: 1, x: 0, duration: 0.7 }
-  );
-});
-</script>
-
 <template>
   <section
     id="about-me-section"
@@ -121,3 +76,52 @@ onMounted((): void => {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { $ScrollTrigger, $gsap } = useNuxtApp();
+
+const timelines: Record<string, GSAPTimeline> = {};
+
+/**
+ * Initializes the timeline animation on mount.
+ * @returns {void}
+ */
+onMounted((): void => {
+  timelines.aboutMe = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#about-me',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnterBack: (): GSAPTimeline => timelines.aboutMe.restart(),
+      onEnter: (): GSAPTimeline => timelines.aboutMe.restart()
+    })
+  });
+
+  timelines.aboutCompany = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#about-company',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnterBack: (): GSAPTimeline => timelines.aboutCompany.restart(),
+      onEnter: (): GSAPTimeline => timelines.aboutCompany.restart()
+    })
+  });
+
+  timelines.aboutMe.fromTo(
+    '#about-me',
+    { opacity: 0, x: -12 },
+    { opacity: 1, x: 0, duration: 0.7 }
+  );
+
+  timelines.aboutCompany.fromTo(
+    '#about-me-presentation',
+    { opacity: 0 },
+    { opacity: 1, duration: 1 }
+  );
+  timelines.aboutCompany.fromTo(
+    '#about-company',
+    { opacity: 0, x: -12 },
+    { opacity: 1, x: 0, duration: 0.7 }
+  );
+});
+</script>

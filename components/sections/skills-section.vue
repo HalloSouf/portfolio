@@ -1,81 +1,3 @@
-<script setup lang="ts">
-const { $ScrollTrigger, $gsap } = useNuxtApp();
-
-const timelines: Record<string, GSAPTimeline> = {};
-
-onMounted((): void => {
-  timelines.heading = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-heading',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnter: (): GSAPTimeline => timelines.heading.restart(),
-      onEnterBack: (): GSAPTimeline => timelines.heading.restart()
-    })
-  });
-
-  timelines.frontend = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnter: (): GSAPTimeline => timelines.frontend.restart(),
-      onEnterBack: (): GSAPTimeline => timelines.frontend.restart()
-    })
-  });
-
-  timelines.backend = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnter: (): GSAPTimeline => timelines.backend.restart(),
-      onEnterBack: (): GSAPTimeline => timelines.backend.restart()
-    })
-  });
-
-  timelines.tools = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#skills-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnter: (): GSAPTimeline => timelines.tools.restart(),
-      onEnterBack: (): GSAPTimeline => timelines.tools.restart()
-    })
-  });
-
-  timelines.heading.fromTo(
-    '#skills-heading',
-    { opacity: 0, y: -12 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 0.5 }
-  );
-
-  document.querySelectorAll('.skills-item--frontend').forEach((element) => {
-    timelines.frontend.fromTo(
-      element,
-      { opacity: 0, y: -12 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
-    );
-  });
-
-  document.querySelectorAll('.skills-item--backend').forEach((element) => {
-    timelines.backend.fromTo(
-      element,
-      { opacity: 0, y: -12 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
-    );
-  });
-
-  document.querySelectorAll('.skills-item--tools').forEach((element) => {
-    timelines.tools.fromTo(
-      element,
-      { opacity: 0, y: -12 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
-    );
-  });
-});
-</script>
-
 <template>
   <section
     id="skills-section"
@@ -346,3 +268,85 @@ onMounted((): void => {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { $ScrollTrigger, $gsap } = useNuxtApp();
+
+const timelines: Record<string, GSAPTimeline> = {};
+
+/**
+ * Initializes the timeline animation on mount.
+ * @returns {void}
+ */
+onMounted((): void => {
+  timelines.heading = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#skills-heading',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: (): GSAPTimeline => timelines.heading.restart(),
+      onEnterBack: (): GSAPTimeline => timelines.heading.restart()
+    })
+  });
+
+  timelines.frontend = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#skills-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: (): GSAPTimeline => timelines.frontend.restart(),
+      onEnterBack: (): GSAPTimeline => timelines.frontend.restart()
+    })
+  });
+
+  timelines.backend = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#skills-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: (): GSAPTimeline => timelines.backend.restart(),
+      onEnterBack: (): GSAPTimeline => timelines.backend.restart()
+    })
+  });
+
+  timelines.tools = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#skills-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: (): GSAPTimeline => timelines.tools.restart(),
+      onEnterBack: (): GSAPTimeline => timelines.tools.restart()
+    })
+  });
+
+  timelines.heading.fromTo(
+    '#skills-heading',
+    { opacity: 0, y: -12 },
+    { opacity: 1, y: 0, duration: 0.7, delay: 0.5 }
+  );
+
+  document.querySelectorAll('.skills-item--frontend').forEach((element) => {
+    timelines.frontend.fromTo(
+      element,
+      { opacity: 0, y: -12 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
+    );
+  });
+
+  document.querySelectorAll('.skills-item--backend').forEach((element) => {
+    timelines.backend.fromTo(
+      element,
+      { opacity: 0, y: -12 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
+    );
+  });
+
+  document.querySelectorAll('.skills-item--tools').forEach((element) => {
+    timelines.tools.fromTo(
+      element,
+      { opacity: 0, y: -12 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 }
+    );
+  });
+});
+</script>

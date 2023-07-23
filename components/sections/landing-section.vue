@@ -1,48 +1,3 @@
-<script setup lang="ts">
-const { $ScrollTrigger, $gsap } = useNuxtApp();
-const config = useRuntimeConfig();
-
-const timelines: Record<string, GSAPTimeline> = {};
-
-onMounted((): void => {
-  timelines.heading = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#heading',
-      onEnter: (): GSAPTimeline => timelines.heading.play(),
-      onEnterBack: (): GSAPTimeline => timelines.heading.restart()
-    })
-  });
-
-  timelines.links = $gsap.timeline({
-    scrollTrigger: $ScrollTrigger.create({
-      trigger: '#heading-links',
-      onEnter: (): GSAPTimeline => timelines.links.play(),
-      onEnterBack: (): GSAPTimeline => timelines.links.restart()
-    })
-  });
-
-  timelines.heading.fromTo(
-    '#heading-title',
-    { opacity: 0, y: 12 },
-    { opacity: 1, y: 0, duration: 0.7 }
-  );
-  timelines.heading.fromTo(
-    '#heading-subtitle',
-    { opacity: 0, x: 16 },
-    { opacity: 1, x: 0, duration: 0.7 }
-  );
-
-  timelines.links.fromTo(
-    '#heading-links',
-    { opacity: 0, x: 12 },
-    { opacity: 1, x: 0, duration: 0.7 }
-  );
-
-  timelines.heading.play();
-  timelines.links.play();
-});
-</script>
-
 <template>
   <header
     id="landing-section"
@@ -143,3 +98,52 @@ onMounted((): void => {
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+const { $ScrollTrigger, $gsap } = useNuxtApp();
+const config = useRuntimeConfig();
+
+const timelines: Record<string, GSAPTimeline> = {};
+
+/**
+ * Initializes the timeline animation on mount.
+ * @returns {void}
+ */
+onMounted((): void => {
+  timelines.heading = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#heading',
+      onEnter: (): GSAPTimeline => timelines.heading.play(),
+      onEnterBack: (): GSAPTimeline => timelines.heading.restart()
+    })
+  });
+
+  timelines.links = $gsap.timeline({
+    scrollTrigger: $ScrollTrigger.create({
+      trigger: '#heading-links',
+      onEnter: (): GSAPTimeline => timelines.links.play(),
+      onEnterBack: (): GSAPTimeline => timelines.links.restart()
+    })
+  });
+
+  timelines.heading.fromTo(
+    '#heading-title',
+    { opacity: 0, y: 12 },
+    { opacity: 1, y: 0, duration: 0.7 }
+  );
+  timelines.heading.fromTo(
+    '#heading-subtitle',
+    { opacity: 0, x: 16 },
+    { opacity: 1, x: 0, duration: 0.7 }
+  );
+
+  timelines.links.fromTo(
+    '#heading-links',
+    { opacity: 0, x: 12 },
+    { opacity: 1, x: 0, duration: 0.7 }
+  );
+
+  timelines.heading.play();
+  timelines.links.play();
+});
+</script>

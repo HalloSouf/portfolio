@@ -1,50 +1,3 @@
-<script setup lang="ts">
-import { TransitionRoot } from '@headlessui/vue';
-
-const { $gsap } = useNuxtApp();
-
-const scrollPosition = ref<number>(0);
-
-useServerSeoMeta({
-  title: 'Souf IT: Voor jouw IT oplossingen · Souf IT',
-  description:
-    'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Doe je mee?',
-  author: 'HalloSouf',
-  charset: 'utf-8',
-  ogDescription:
-    'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Doe je mee?',
-  viewport: 'width=device-width, initial-scale=1.0',
-  ogUrl: 'https://soufit.nl',
-  ogTitle: 'Souf IT: Voor jouw IT oplossingen',
-  ogSiteName: 'Souf IT',
-  ogType: 'website',
-  ogLocale: 'nl_NL',
-  themeColor: '#10101a',
-  ogImage: 'https://soufit.nl/images/soufit-banner.png',
-  ogImageHeight: '630',
-  ogImageWidth: '1200',
-  ogImageType: 'image/png'
-});
-
-/**
- * Scrolls the window to the top of the page using GSAP.
- * @returns {GSAPTween} - The GSAP tween object.
- */
-const scrollToTop = (): GSAPTween => {
-  return $gsap.to(window, { duration: 0.5, scrollTo: 0 });
-};
-
-/**
- * Sets up a scroll event listener to update the scroll position.
- * @returns {void}
- */
-onMounted((): void => {
-  window.addEventListener('scroll', () => {
-    scrollPosition.value = window.scrollY;
-  });
-});
-</script>
-
 <template>
   <div class="relative max-w-screen">
     <Navbar />
@@ -90,3 +43,46 @@ onMounted((): void => {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { TransitionRoot } from '@headlessui/vue';
+
+const { $gsap } = useNuxtApp();
+const scrollPosition = ref<number>(0);
+
+/**
+ * Scrolls the window to the top of the page using GSAP.
+ * @returns {GSAPTween} - The GSAP tween object.
+ */
+const scrollToTop = (): GSAPTween => {
+  return $gsap.to(window, { duration: 0.5, scrollTo: 0 });
+};
+
+/**
+ * Sets up a scroll event listener to update the scroll position.
+ * @returns {void}
+ */
+onMounted((): void => {
+  window.addEventListener('scroll', () => {
+    scrollPosition.value = window.scrollY;
+  });
+});
+
+useServerSeoMeta({
+  title: 'Souf IT: Voor jouw IT oplossingen · Souf IT',
+  description:
+    'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Start jij met mij jouw toekomst?',
+  author: 'HalloSouf',
+  charset: 'utf-8',
+  ogDescription:
+    'Zeg hallo tegen Souf IT. Samen ontdekken wij grenzeloze mogelijkheden voor uw situatie. Start jij met mij jouw toekomst?',
+  viewport: 'width=device-width, initial-scale=1.0',
+  ogUrl: 'https://soufit.nl',
+  ogTitle: 'Souf IT: Voor jouw IT oplossingen',
+  ogSiteName: 'Souf IT',
+  ogType: 'website',
+  ogLocale: 'nl_NL',
+  themeColor: '#10101a',
+  twitterImage: 'https://soufit.nl/images/soufit-banner.png'
+});
+</script>

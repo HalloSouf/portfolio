@@ -85,7 +85,7 @@ onMounted((): void => {
       <div class="w-full min-h-screen flex justify-center flex-col">
         <div
           id="skills-heading"
-          class="w-2/3"
+          class="w-full lg:w-2/3"
         >
           <h1 class="text-4xl text-white font-semibold">
             Wat
@@ -111,7 +111,7 @@ onMounted((): void => {
         >
           <div
             id="skills-frontend"
-            class="w-full py-5 px-10"
+            class="w-full py-5 px-0 md:px-10"
           >
             <h2 class="text-white font-semibold text-2xl flex gap-x-4">
               <i>
@@ -178,7 +178,7 @@ onMounted((): void => {
 
           <div
             id="skills-backend"
-            class="w-full py-5 px-10"
+            class="w-full py-5 px-0 md:px-10"
           >
             <h2 class="text-white font-semibold text-2xl gap-x-4 flex">
               <i>
@@ -266,7 +266,7 @@ onMounted((): void => {
 
           <div
             id="skills-tools"
-            class="w-full py-5 px-10"
+            class="w-full py-5 px-0 md:px-10"
           >
             <h2 class="text-white font-semibold text-2xl flex items-center gap-x-4">
               <i>

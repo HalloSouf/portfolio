@@ -27,7 +27,7 @@ onMounted((): void => {
   >
     <div class="px-12 md:px-8 max-w-7xl min-h-screen mx-auto">
       <div class="w-full min-h-screen flex justify-center flex-col">
-        <div class="w-2/3 mb-8">
+        <div class="w-full lg:w-2/3 mb-8">
           <h1 class="text-4xl text-white font-semibold">Mijn projecten & Werkervaringen</h1>
 
           <p class="text-white text mt-4">

@@ -38,6 +38,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@headlessui/vue": "^1.7.14",
     "locomotive-scroll": "^4.1.4",
+    "nuxt-mail": "^4.0.1",
     "smooth-scroll": "^16.1.3"
   }
 }

@@ -39,7 +39,25 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@hypernym/nuxt-gsap', '@nuxt/image'],
+  modules: [
+    '@hypernym/nuxt-gsap',
+    '@nuxt/image',
+    [
+      'nuxt-mail',
+      {
+        message: {
+          to: process.env.MAIL_MESSAGE_TO || 'to'
+        },
+        smtp: {
+          service: process.env.MAIL_SERVICE || 'gmail',
+          auth: {
+            user: process.env.MAIL_AUTH_USER || 'user',
+            pass: process.env.MAIL_AUTH_PASS || 'pass'
+          }
+        }
+      }
+    ]
+  ],
   gsap: {
     extraPlugins: {
       scrollTrigger: true,

@@ -50,6 +50,17 @@ onMounted((): void => {
       class="navbar"
       aria-label="Global"
     >
+      <div class="flex">
+        <a href="/">
+          <span class="sr-only">Souf IT</span>
+          <NuxtImg
+            class="h-8 w-auto"
+            src="/images/soufit-full-logo.svg"
+            alt="gamers"
+          />
+        </a>
+      </div>
+
       <div class="flex lg:hidden">
         <button
           type="button"
@@ -62,21 +73,6 @@ onMounted((): void => {
             class="text-xl text-white"
           />
         </button>
-      </div>
-
-      <div class="flex lg:flex-1">
-        <a
-          href="#"
-          class="-m-1.5 p-1.5 flex items-center gap-x-1"
-        >
-          <span class="sr-only">Souf IT</span>
-          <NuxtImg
-            class="h-8 w-auto"
-            src="/images/soufit-logo.svg"
-            alt="gamers"
-          />
-          <span class="font-bold text-wider text-sky-600">Souf IT.</span>
-        </a>
       </div>
 
       <div class="hidden lg:flex lg:gap-x-12">
@@ -96,25 +92,23 @@ onMounted((): void => {
 
         <a
           href="#"
-          class="navbar-item--disabled"
+          class="navbar-item"
+          @click="() => scrollTo('projects-section')"
         >
           Projecten
         </a>
+      </div>
 
+      <div class="hidden lg:flex">
         <a
           href="#"
           class="navbar-item--disabled"
         >
           Contact
+          <i class="ml-2">
+            <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
+          </i>
         </a>
-      </div>
-
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a
-          href="#"
-          class="text-sm font-semibold leading-6 text-gray-900"
-          >Contact <span aria-hidden="true">&rarr;</span></a
-        >
       </div>
     </nav>
 
@@ -183,9 +177,19 @@ onMounted((): void => {
                     Vaardigheden
                   </button>
 
-                  <button class="navbar-fold-item">Projecten</button>
+                  <button
+                    class="navbar-fold-item focus:bg-transparent"
+                    @click="() => scrollTo('projects-section', true)"
+                  >
+                    Projecten
+                  </button>
 
-                  <button class="navbar-fold-item">Projecten</button>
+                  <button
+                    class="navbar-fold-item focus:bg-transparent"
+                    @click="() => scrollTo('projects-section', true)"
+                  >
+                    Contact
+                  </button>
                 </div>
               </div>
             </div>

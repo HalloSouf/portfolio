@@ -12,16 +12,10 @@ const config = useRuntimeConfig();
           class="text-white/70 hover:text-white flex items-center"
         >
           <span class="sr-only">Instagram</span>
-          <font-awesome-icon :icon="['fab', 'instagram']" class="text-xl" />
-        </a>
-
-        <a
-          :href="config.public.userDiscordUrl"
-          target="_blank"
-          class="text-white/70 hover:text-white flex items-center"
-        >
-          <span class="sr-only">Discord</span>
-          <font-awesome-icon :icon="['fab', 'discord']" />
+          <font-awesome-icon
+            :icon="['fab', 'instagram']"
+            class="text-xl"
+          />
         </a>
 
         <a

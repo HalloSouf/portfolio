@@ -77,10 +77,16 @@ onMounted((): void => {
 </script>
 
 <template>
-  <section id="skills-section" class="min-h-screen relative">
+  <section
+    id="skills-section"
+    class="min-h-screen relative mt-20 md:mt-0"
+  >
     <div class="px-12 md:px-8 max-w-7xl min-h-screen mx-auto">
       <div class="w-full min-h-screen flex justify-center flex-col">
-        <div id="skills-heading">
+        <div
+          id="skills-heading"
+          class="w-2/3"
+        >
           <h1 class="text-4xl text-white font-semibold">
             Wat
             <span class="underline decoration-dashed underline-offset-8 text-sky-500">gebruik</span>
@@ -316,6 +322,27 @@ onMounted((): void => {
           </div>
         </div>
       </div>
+    </div>
+
+    <div
+      class="absolute hidden lg:block left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[32rem] xl:left-[calc(50%-24rem)]"
+      aria-hidden="true"
+    >
+      <div
+        class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-sky-500 to-[#4f46e5] opacity-20"
+        style="
+          clip-path: polygon(
+            73.6% 51.7%,
+            91.7% 11.8%,
+            100% 46.4%,
+            97.4% 82.2%,
+            92.5% 84.9%,
+            75.7% 64%,
+            55.3% 47.5%,
+            46.5% 49.4%
+          );
+        "
+      ></div>
     </div>
   </section>
 </template>

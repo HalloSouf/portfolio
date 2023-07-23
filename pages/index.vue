@@ -46,7 +46,7 @@ onMounted((): void => {
 </script>
 
 <template>
-  <div>
+  <div class="relative max-w-screen">
     <Navbar />
 
     <div>

@@ -1,63 +1,69 @@
-# Nuxt 3 Minimal Starter
+<div align="center">
+  <br />
+  <h1>Souf IT's Portfolio 🖼️</h1>
+  <br />
+  <br />
+  <p>
+    <a href="https://nuxtjs.org/" target="_blank"><img src="https://img.shields.io/badge/-NuxtJS-000?style=for-the-badge&logo=nuxt.js"></a>
+    <a href="https://tailwindcss.com/" target="_blank"><img src="https://img.shields.io/badge/-TailwindCSS-000?style=for-the-badge&logo=tailwindcss"></a>
+  </p>
+</div>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## About 📘
 
-## Setup
+This repository households the source code of Souf IT's portfolio website which is reponsible for the user interface & user experience of the website.
 
-Make sure to install the dependencies:
+## Getting Started 🐦
+
+### Prerequisites 📋
+
+- [Node.JS](https://nodejs.org/en/): We recommend using the latest LTS version.
+- [Yarn](https://yarnpkg.com/): We recommend using the latest stable version. (Optional, you can run the website with npm as well.)
+
+### Installation 🏗️
+
+The first step is cloning the repository on your local machine.
 
 ```bash
-# npm
-npm install
+git clone https://github.com/HalloSouf/portfolio.git
+```
 
-# pnpm
-pnpm install
+Navigate through your CLI to the cloned repository and install all dependencies.
 
-# yarn
+```bash
+cd portfolio
+
+# With yarn
 yarn install
+
+# Or with npm
+npm install
 ```
 
-## Development Server
+### Run project locally 🏠
 
-Start the development server on `http://localhost:3000`:
+Now you have installed all the required dependencies. You are now ready to start your development environment on your local machine.
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
+# With yarn
 yarn dev
+
+# Or with npm
+npm run dev
 ```
 
-## Production
+## Production 🗺️
 
-Build the application for production:
+To build the project for production, you can run the following command.
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
+# With yarn
 yarn build
+
+# Or with npm
+npm run build
 ```
 
-Locally preview production build:
+## License 📜
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the Public General Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
